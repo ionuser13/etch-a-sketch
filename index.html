@@ -14,10 +14,11 @@
     <main>
         <div class="grid-container"></div>
         <div class="buttons-container">
-            <button>Black</button>
-            <button>White</button>
-            <button>Rainbow</button>
-            <button>Reset</button>
+            <button onclick="changeColor('black')">Black</button>
+            <button onclick="changeColor('gray')"">Gray</button>
+            <button onclick="changeColor('rainbow')"">Rainbow</button>
+            <button onclick="changeColor('white')">Eraser</button>
+            <button onclick="populate(16)">Reset</button>
         </div>
         <div>
             <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" name="" id="">
