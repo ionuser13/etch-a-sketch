@@ -1,7 +1,7 @@
 let currentColor = "black";
-
+let gridStatus = false;
+let gridContainer = document.querySelector(".grid-container");
 function populate(size) {
-    let gridContainer = document.querySelector(".grid-container");
     const prevCells = document.querySelectorAll(".cell");
     prevCells.forEach((cell) => cell.remove())
     gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -29,15 +29,24 @@ function changeSize(input) {
         console.log("Maximun number of cells reached")
     }
 }
+gridContainer.addEventListener("mousedown", () => {
+    gridStatus = true
+})
+gridContainer.addEventListener("mouseup", () => {
+    gridStatus = false;
+})
 function colorCell() {
-    if (color = "rainbow") {
-        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`
-    }
-    else {
+    if (gridStatus) {
+        this.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;
         this.style.backgroundColor = currentColor;
     }
 }
 
 function changeColor(color) {
     currentColor = color
+}
+
+function resetGrid() {
+    const prevCells = document.querySelectorAll(".cell");
+    prevCells.forEach((cell) => cell.style.backgroundColor = "white")
 }
