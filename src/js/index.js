@@ -1,3 +1,4 @@
+const errorPanel = document.querySelector(".error")
 let currentColor = "black";
 let gridStatus = false;
 let gridContainer = document.querySelector(".grid-container");
@@ -11,7 +12,6 @@ function populate(size) {
         cell.style.backgroundColor = "whte";
         cell.classList.add("cell");
         cell.addEventListener("mouseover", colorCell)
-        cell.style.border = "1px solid black"
         gridContainer.insertAdjacentElement("beforeend", cell)
     }
 }
@@ -23,10 +23,10 @@ function changeSize(input) {
         populate(input)
     }
     else if (input < 0) {
-        console.log("We haven't invented negative areas yet")
+        errorPanel.innerText = "We haven't invented negative areas yet";
     }
     else {
-        console.log("Maximun number of cells reached")
+        errorPanel.innerText = "Maximun number of cells reached"
     }
 }
 gridContainer.addEventListener("mousedown", () => {

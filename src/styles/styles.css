@@ -11,3 +11,6 @@ body {
     width: 500px;
     height: 500px;
 }
+.none {
+    display: none;
+}
