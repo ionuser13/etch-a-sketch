@@ -16,6 +16,11 @@ function populate(size) {
 populate(16);
 
 function changeSize(input) {
-    populate(input)
+    if(input >= 2 && input <= 100) {
+        populate(input)
+    }
+    else {
+        console.log("Maximun number of cells reached")
+    }
 }
 
