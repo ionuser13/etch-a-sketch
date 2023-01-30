@@ -1,5 +1,6 @@
 const errorPanel = document.querySelector(".error");
 const errorText = document.querySelector(".error-text");
+const tryAgainButton = document.querySelector(".try-again");
 let currentColor = "black";
 let gridStatus = false;
 let gridContainer = document.querySelector(".grid-container");
@@ -25,11 +26,11 @@ function changeSize(input) {
     }
     else if (input < 0) {
         errorPanel.classList.remove("none");
-        errorPanel.innerText = "We haven't invented negative areas yet";
+        errorText.innerText = "We haven't invented negative areas yet";
     }
     else {
         errorPanel.classList.remove("none");
-        errorPanel.innerText = "Maximun number of cells reached"
+        errorText.innerText = "Maximun number of cells reached";
     }
 }
 window.addEventListener("mousedown", () => {
@@ -54,3 +55,6 @@ function resetGrid() {
     const prevCells = document.querySelectorAll(".cell");
     prevCells.forEach((cell) => cell.style.backgroundColor = "white")
 }
+tryAgainButton.addEventListener("click", () => {
+    errorPanel.classList.add("none")
+})
