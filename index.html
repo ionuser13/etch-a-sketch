@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/58afabde18.js" crossorigin="anonymous"></script>
     <title>Etch-a-sketch</title>
 </head>
 <body>
@@ -14,21 +18,30 @@
     <main>
         <div class="grid-container"></div>
         <div class="buttons-container">
-            <button onclick="changeColor('black')">Black</button>
-            <button onclick="changeColor('gray')"">Gray</button>
-            <button onclick="changeColor('rainbow')"">Rainbow</button>
-            <button onclick="changeColor('white')">Eraser</button>
-            <button onclick="resetGrid()">Reset</button>
-        </div>
-        <div>
-            <input type="text" placeholder="Size of Board" value="16" onchange="changeSize(this.value)" name="" id="">
-            <button>Set Size</button>
+            <button class="color-button" onclick="changeColor('black')">Black</button>
+            <button class="color-button" onclick="changeColor('gray')"">Gray</button>
+            <button class="color-button"  onclick="changeColor('rainbow')"">Rainbow</button>
+            <button class="color-button" onclick="changeColor('white')">Eraser</button>
+            <button class="color-button" onclick="resetGrid()">Reset</button>
+            <div class="size-input">
+                <input type="number" placeholder="Size of Board" value="" onchange="changeSize(this.value)" name="size" id="size">
+                <button class="color-button">Set Size</button>
+            </div>
         </div>
         <div class="error">
-            hola buenas
+            <div class="block"></div>
+            <p class="error-text"></p>
+            <button class="color-button">Try Again</button>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Copyright ©
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            - @<span class="link-container"><a href="https://github.com/ionuser13" target="_blank" class="link">ionuser13</a> <i class="fa-brands fa-github"></i></span>
+        </p>
+    </footer>
     <script defer src="./src/js/index.js"></script>
 </body>
 </html>
